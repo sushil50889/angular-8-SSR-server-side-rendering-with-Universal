@@ -39,7 +39,8 @@ export class ApiService {
 
 
   getArticle(id: number): Observable<Article> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}${id}`;
+    // console.log();    
     return this.http.get<Article>(url).pipe(
       tap(_ => console.log(`fetched Article id=${id}`)),
       catchError(this.handleError)
