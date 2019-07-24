@@ -8,6 +8,7 @@ import { Article } from "../article";
   templateUrl: "./show-article.component.html",
   styleUrls: ["./show-article.component.css"]
 })
+
 export class ShowArticleComponent implements OnInit {
   article: Article = {
     _id: "",
@@ -17,7 +18,9 @@ export class ShowArticleComponent implements OnInit {
     content: "",
     updatedAt: null
   };
+
   isLoadingResults = true;
+
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,

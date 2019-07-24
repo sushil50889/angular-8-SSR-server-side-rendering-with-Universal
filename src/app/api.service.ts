@@ -61,7 +61,7 @@ export class ApiService {
 
 
   updateArticle(id: any, article: Article): Observable<any> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}${id}`;
     return this.http.put(url, article, httpOptions).pipe(
       tap(_ => console.log(`updated Article id=${id}`)),
       catchError(this.handleError)
@@ -72,7 +72,7 @@ export class ApiService {
 
 
   deleteArticle(id: any): Observable<Article> {
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}${id}`;
     return this.http.delete<Article>(url, httpOptions).pipe(
       tap(_ => console.log(`deleted Article id=${id}`)),
       catchError(this.handleError)
